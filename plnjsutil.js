@@ -62,7 +62,7 @@ const countArrayElements = (array) => {
  * 
  * @param {string} url 
  * @param {string} concat 
- * @returns 
+ * @returns {string} resolvedUrl - URL where the argument url and concat is resolved
  */
 const concatAndResolveUrl = (url, concat) => {
     let url1 = url.split('/');
@@ -95,8 +95,8 @@ const concatAndResolveUrl = (url, concat) => {
 
 /**
  * 
- * @param {string} path 
- * @returns {any | Array<any>} jsonData
+ * @param {string} path - Path of JSON to be read 
+ * @returns {any | Array<any>} Object read from JSON
  */
 const fetchJson = async (path) => {
     const response = await fetch(path)
@@ -106,4 +106,35 @@ const fetchJson = async (path) => {
     const jsonData = await response.json();
 
     return jsonData;
+}
+
+
+/**
+ * This function calculates the difference between nowDate and the targetDate
+ * 
+ * @param {Date} nowDate 
+ * @param {Date} targetDate 
+ * @returns {number} Difference between nowDate and targetDate  
+ */
+const showDiffDate = (nowDate, targetDate) => {
+    const nowTime = nowDate.getTime();
+    const targetTime = targetDate.getTime();
+
+    const diffMSec = targetTime - nowTime;
+    const diffDays = diffMSec / (1000 * 60 * 60 * 24);
+    const showDays = Math.ceil(diffDays); 
+
+    return showDays
+}
+
+
+/**
+ * This function calculates the difference between now date and the targetDate
+ * 
+ * @param {Date} targetDate 
+ * @returns {number} Difference between now date and targetDate  
+ */
+const showDiffNowDate = (targetDate) => {
+    const showDays = showDiffDate(new Date(), targetDate)
+    return showDays
 }
