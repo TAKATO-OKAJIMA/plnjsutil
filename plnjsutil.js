@@ -11,6 +11,16 @@ const removeAllChildNodes = (element) => {
 
 /**
  * 
+ * @param {number} max 
+ * @returns {number} 0 ~ max - 1の値
+ */
+ const getRandomInt = (max) => {
+    return Math.floor(Math.random() * max);
+}
+
+
+/**
+ * 
  * @param {Array} array 
  * @param {Number} number 
  * @returns {Array<Array>}
@@ -90,6 +100,15 @@ const concatAndResolveUrl = (url, concat) => {
     }
     
     return url3.join('/');
+}
+
+
+/**
+ * 
+ * @param {string} url - 
+ */
+const jumpPage = (url) => {
+    location.href = url
 }
 
 
