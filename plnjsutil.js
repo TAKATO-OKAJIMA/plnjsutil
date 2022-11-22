@@ -2,7 +2,7 @@
  * 
  * @param {HTMLElement} element 
  */
-const removeAllChildNodes = (element) => {
+const removeAllChild = (element) => {
     while(element.firstChild) {
         element.removeChild(element.firstChild);
     }
@@ -108,7 +108,7 @@ const concatAndResolveUrl = (url, concat) => {
  * @param {string} url - 
  */
 const jumpPage = (url) => {
-    location.href = url
+    location.href = url;
 }
 
 
@@ -143,7 +143,7 @@ const showDiffDate = (nowDate, targetDate) => {
     const diffDays = diffMSec / (1000 * 60 * 60 * 24);
     const showDays = Math.ceil(diffDays); 
 
-    return showDays
+    return showDays;
 }
 
 
@@ -154,6 +154,6 @@ const showDiffDate = (nowDate, targetDate) => {
  * @returns {number} Difference between now date and targetDate  
  */
 const showDiffNowDate = (targetDate) => {
-    const showDays = showDiffDate(new Date(), targetDate)
-    return showDays
+    const showDays = showDiffDate(new Date(), targetDate);
+    return showDays;
 }
